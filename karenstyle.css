@@ -1,0 +1,220 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding and border */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: brown; /* Light gray background */
+    color: #333; /* Color sa text */
+    line-height: 1.6; /* Spacing between text lines */
+}
+
+/* Container - Centers content and sets max width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Adds breathing room on edges */
+}
+
+/* Header Styles - Top navigation bar */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    position: fixed; /* Sticks to top when scrolling */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures header stays on top of other content */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Spaces logo and nav */
+    align-items: center; /* Centers items vertically */
+    padding: 15px 0;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Ensures logo stays visible above mobile menu */
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1a2a6c, #2a4dad, #4169e1); /* Blue gradient */
+    border-radius: 50%; /* Makes it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: brown;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 15px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.logo-circle:hover {
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+/* Navigation Menu */
+.nav-toggle {
+    display: none; /* Hidden checkbox for mobile menu */
+}
+
+.nav-toggle-label {
+    display: none; /* Hidden on desktop, shown on mobile */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color change */
+    position: relative; /* For the hover underline effect */
+}
+
+nav ul li a:hover {
+    color: #1a2a6c; /* Dark blue on hover */
+}
+
+/* Animated underline effect for nav links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Starts with no width */
+    height: 2px;
+    background: linear-gradient(135deg, #1a2a6c, #4169e1);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease; /* Grows from left to right */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Expands to full width on hover */
+}
+
+/* Hero/Banner Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('/api/placeholder/1200/800') center/cover no-repeat;
+    margin-top: 80px; /* Space for fixed header */
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Text with gradient color effect */
+.highlight {
+    color: #1a2a6c; /* Fallback color */
+    background: linear-gradient(135deg, #1a2a6c, #4169e1);
+    -webkit-background-clip: text; /* Clips background to text */
+    -webkit-text-fill-color: transparent; /* Makes text transparent */
+    background-clip: text;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px; /* Space between text and image */
+}
+
+.about-text {
+    flex: 1; /* Takes up equal space */
+}
+
+.about-text p {
+    margin-top: 20px;
+}
+
+.about-image {
+    flex: 1; /* Takes up equal space */
+    text-align: center;
+}
+
+/* Profile image styling */
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px; /* Rounded corners */
+    width: 320px;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(26, 42, 108, 0.15); /* Subtle shadow */
+    border: 3px solid transparent; /* For gradient border */
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #1a2a6c, #4169e1) border-box; /* Gradient border trick */
+}
+
+/* Section title with underline */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(135deg, #1a2a6c, #4169e1);
+    bottom: -10px;
+    left: 0;
+}
+
+/* Personal info list styling */
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item span {
+    font-weight: 600;
+    width: 120px;
+    display: inline-block;
+    color: #1a2a6c;
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #0d1b42, #1a2a6c); /* Dark blue gradient */
+    color: #fff;
+    padding: 50px 0 20px;
+    text-align: center;
+}
